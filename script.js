@@ -23,17 +23,25 @@ if (navigator.geolocation)
       
 
 //implementing the map
-      var map = L.map('map').setView([51.505, -0.09], 13);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  const coords = [latitude, longitude];
+
+      const map = L.map('map').setView(coords, 13);
+
+   L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
     attribution: 
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+    }).addTo(map);
 
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
-    },
+    map.on('click', function(mapevEvent){
+      console.log(mapevEvent);
+      const {lat, lng } =mapevEvent.latlng;
+    
+
+   L.marker( [lat, lng]).addTo(map).bindPopup('workout').openPopup();
+   });
+  },
+
     function () {
       alert('could not get your position');
     }
