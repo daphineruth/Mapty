@@ -37,7 +37,7 @@ if (navigator.geolocation)
      //handling clicks on maps
 
     map.on('click', function(mapEvent){
-
+     mapEvent 
       form.classList.remove('hidden');
       inputDistance.focus();
      
