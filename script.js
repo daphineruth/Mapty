@@ -25,12 +25,14 @@ if (navigator.geolocation)
 
 //implementing the map
 
-  const coords = [latitude, longitude];
+   const coords = [latitude, longitude];
 
       map = L.map('map').setView(coords, 13);
 
    L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
     attribution: 
+
+
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
@@ -53,9 +55,10 @@ if (navigator.geolocation)
   {
 //Display Marker
       console.log(mapEvent);
-      const {lat, lng } =mapEvent.latlng;
+      const {lat, lng } = mapEvent.latlng;
+  })
     
-
+/*
     L.marker( [lat, lng])
      .addTo(map)
      .bindPopup(
@@ -70,3 +73,4 @@ if (navigator.geolocation)
       .setPopupContent('workout')
     .openPopup();
   })
+  */
