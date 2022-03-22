@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -53,10 +53,12 @@ if (navigator.geolocation)
   
   form.addEventListener('submit', function()
   {
-//Display Marker
-      console.log(mapEvent);
+
+     // console.log(mapEvent);
+
       const {lat, lng } = mapEvent.latlng;
   })
+  .openPopup();
     
 /*
     L.marker( [lat, lng])
