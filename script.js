@@ -38,8 +38,8 @@ if (navigator.geolocation)
 
      //handling clicks on maps
 
-    map.on('click', function(mapEvent){
-     this.mapEvent = mapEvent;
+    map.on('click', function(mapE){
+     mapEvent = mapE;
       form.classList.remove('hidden');
       inputDistance.focus();
      
@@ -51,17 +51,14 @@ if (navigator.geolocation)
     }
   );
   
-  form.addEventListener('submit', function()
+  form.addEventListener('submit', function(e)
   {
-
-     // console.log(mapEvent);
+  e.preventDefault();
+     console.log(mapEvent);
 
       const {lat, lng } = mapEvent.latlng;
-  })
-  .openPopup();
-    
-/*
-    L.marker( [lat, lng])
+  
+      L.marker( [lat, lng])
      .addTo(map)
      .bindPopup(
      L.popup({
@@ -74,5 +71,5 @@ if (navigator.geolocation)
       )
       .setPopupContent('workout')
     .openPopup();
-  })
-  */
+      });
+
